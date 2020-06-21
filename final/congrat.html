@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貓咪方塊</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="material-scrolltop.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <script src="jquery-ui.min.js"></script>
+    <!-- style的部分 -->
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        * {
+            font-family: 'Noto Sans TC';
+        }
+       
+        #bannercat{width: 800px;height: 250px;position: relative;top: -100px;left: 20px;}
+        #nekocube{ max-width: 800px;max-height: 800px}
+        .banner{
+            text-align:center;
+            height: 1000px;background-color: azure;
+        }
+        
+    </style>
+    <!-- script的部分 -->
+    <script>
+         jQuery(document).ready(function() {
+                $("#bannercat").animate({width: "1100", 
+                height: "400", top: "-150px"
+                }, 1000 )
+            }); 
+         
+    </script>
+</head>
+<body>
+    
+   
+    <div class="banner">
+        <div class="gname"><img src="img/final.png" id="nekocube"></div>
+        <div style="height: 500px;background-color: azure;"><img src="img/congratuate.png" id="bannercat"></div>  
+        <div style="position: relative;top: -350px;font-size: 20px;left: 25px;">   Ting Wei Xu © 2020 </div>
+    </div>
+    
+    
+    
+    
+      
+        
+        
+        
+        
+</body>
+</html>

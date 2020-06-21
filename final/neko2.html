@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貓咪方塊</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="material-scrolltop.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <script src="jquery-ui.min.js"></script>
+    <!-- style的部分 -->
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        * {
+            font-family: 'Noto Sans TC';
+        }
+        #c1{ max-width:200px;max-height:100px }
+        #c2{ max-width:200px;max-height:200px }
+        #c3{ max-width:400px;max-height:100px }
+        #c4{ max-width:300px;max-height:200px }
+        #c5{ max-width:300px;max-height:200px }
+        #c6{ max-width:200px;max-height:200px }
+        #c7{ max-width:300px;max-height:300px}
+        #gameback{ max-width: 720px;max-height: 525px;
+                   
+        }
+        #bannercat{max-width: 590px;max-height: 420px;}
+        #nekocube{ max-width: 800px;max-height: 300px}
+        #button{
+            width:180px;height:70px;font-size:30px;color: burlywood;font-weight: bolder;
+            border-radius: 10px;border-color: azure ;background-color: cornsilk;
+            position: relative;top: 45px;
+        }
+        #next{
+            width:180px;height:70px;font-size:30px;color: 	#9F5000;font-weight: bolder;
+            border-radius: 10px;background-color:	#FFC78E;
+            position: relative;top: 70px;
+        }
+        #gamestart{background-color: cornsilk;}
+        .cat{
+            display: inline-block;
+        }
+        .banner{
+            text-align:center;
+            height: 1000px;background-color: azure;
+        }
+        .gname{
+            position: relative;padding-left: 50px;
+        }
+        .button{height: 100px;}
+        .puzzle{
+            text-align:center;background-color: cornsilk;height: 400px;
+            z-index: 1;
+        }
+        .pd{
+            text-align: center;height: 900px;background-color: cornsilk;
+            z-index: initial;
+        }
+    </style>
+    <!-- script的部分 -->
+    <script src="jQueryRotate.js"></script>
+    <script src="material-scrolltop.js"></script>
+    <script>
+            jQuery(document).ready(function() {
+        var deg_temp = 0;
+        jQuery(".cat").click(function() {
+            deg_temp = deg_temp + 90;
+            jQuery(this).rotate(deg_temp);
+        })
+
+        });
+            $(function() {
+            $( ".cat" ).draggable({ scroll: true, scrollSensitivity: 100 });
+        });
+            $(function() {
+            $("#button").click(function(){
+            $("html,body").animate({scrollTop:$("#gamestart").offset().top}, 800);
+            }); 
+
+        });
+        function tz(){
+          window.location.href="neko3.html";
+        }
+    </script>
+</head>
+<body>
+    
+    <div id="gamestart">
+        <div class="puzzle" >
+            <div style="height: 62px;text-align: center;padding:20px;font-size: 20px;">聽點音樂，放鬆一下!</div>
+            <div> <audio controls autoplay loop>
+                <source src="RED - Instrumental_unregistered.mp3" type="audio/mpeg"> 
+            </audio></div>
+            <div style="padding-top: 50px;max-width: 1600px;">
+                <div class="cat" ><img src="img/n1.png" id="c1"></div>
+                <div class="cat" ><img src="img/n2.png" id="c2"></div>
+                <div class="cat" ><img src="img/n3.png" id="c3"></div>
+                <div class="cat" ><img src="img/n9.png" id="c4"></div>
+                <div class="cat" ><img src="img/n8.png" id="c5"></div>
+                <div class="cat" ><img src="img/n2.png" id="c6"></div>
+                <div class="cat" ><img src="img/n10.png" id="c7"></div>
+            </div>
+            
+          </div>  
+          <div></div>
+          <div class="pd">
+            <div style="padding-top: 70px;">
+                <img src="img/n7.png" id="gameback">
+            </div>  
+            <div class="button">
+                <div><input type="button" value="下一關" id="next" onclick="tz()" ></div>
+            </div>
+            <div style="position: relative;top: 150px;"> Ting Wei Xu © 2020 </div>
+          </div>  
+    </div>
+    
+      
+        
+        
+        
+        
+</body>
+</html>

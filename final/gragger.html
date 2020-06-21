@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI 拖动（Draggable） - 自动滚动</title>
+  <link rel="stylesheet" href="jquery-ui.min.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- style的部分 -->
+  <style>
+  #draggable, #draggable2, #draggable3 { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 0 10px 10px 0; }
+  </style>
+  <!-- script的部分 -->
+  <script>
+  $(function() {
+
+    $( ".ui-widget-content" ).draggable({ scroll: true, scrollSensitivity: 100 });
+ 
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="draggable" class="ui-widget-content">
+  <p>Scroll 设置为 true，默认设置</p>
+</div>
+ 
+<div id="draggable2" class="ui-widget-content">
+  <p>scrollSensitivity 设置为 100</p>
+</div>
+ 
+<div id="draggable3" class="ui-widget-content">
+  <p>scrollSpeed 设置为 100</p>
+</div>
+ 
+<div style="height: 5000px; width: 1px;"></div>
+ 
+ 
+</body>
+</html>
