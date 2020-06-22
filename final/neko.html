@@ -72,7 +72,9 @@
         });
             $(function() {
             $( ".cat" ).draggable({ scroll: true, scrollSensitivity: 100 });
+
         });
+        
             $(function() {
             $("#button").click(function(){
             $("html,body").animate({scrollTop:$("#gamestart").offset().top}, 800);
@@ -82,6 +84,9 @@
         function tz(){
           window.location.href="neko2.html";
         }
+        
+        
+        
     </script>
 </head>
 <body>
@@ -91,7 +96,7 @@
         <div class="gname"><img src="img/貓咪方塊.png" id="nekocube"></div>
         <div><img src="img/banner.png" id="bannercat"></div>
         <div class="button">
-            <div><input type="button" value="START" id="button"></div>
+            <div><input type="button" value="START" id="button" onclick="document.getElementById('music').play()"></div>
         </div>    
         <div style="position: relative;left: 180px;top: -95px;">
             <p>此為模仿、二創，遊戲原型為 : <a href="https://play.google.com/store/apps/details?id=net.nekoapp.nekotume3&hl=ja">ねこつめ</a>  
@@ -103,7 +108,7 @@
     <div id="gamestart">
         <div class="puzzle" >
             <div style="height: 62px;text-align: center;padding:20px;font-size: 20px;">聽點音樂，放鬆一下!</div>
-            <div> <audio controls autoplay loop>
+            <div> <audio controls loop controlsList="nodownload" id="music">
                 <source src="Darktown_Strutters_Ball.mp3" type="audio/mpeg"> 
             </audio></div>
             <div style="padding-top: 50px;">
