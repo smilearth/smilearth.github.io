@@ -61,6 +61,7 @@
     <!-- script的部分 -->
     <script src="jQueryRotate.js"></script>
     <script src="material-scrolltop.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
     <script>
             jQuery(document).ready(function() {
         var deg_temp = 0;
@@ -72,7 +73,9 @@
         });
             $(function() {
             $( ".cat" ).draggable({ scroll: true, scrollSensitivity: 100 });
+
         });
+        
             $(function() {
             $("#button").click(function(){
             $("html,body").animate({scrollTop:$("#gamestart").offset().top}, 800);
@@ -97,7 +100,7 @@
             <div><input type="button" value="START" id="button" onclick="document.getElementById('music').play()"></div>
         </div>    
         <div style="position: relative;left: 180px;top: -95px;">
-            <p>此為模仿、二創，遊戲原型為 : <a href="https://play.google.com/store/apps/details?id=net.nekoapp.nekotume3&hl=ja">ねこつめ</a>  
+            <p>此為模仿、二創，遊戲原型為 : <a href="https://play.google.com/store/apps/details?id=net.nekoapp.nekotume3&hl=ja">ねこつめ3</a>  
                 </p> 
             </div>
         
@@ -106,7 +109,11 @@
     <div id="gamestart">
         <div class="puzzle" >
             <div style="height: 62px;text-align: center;padding:20px;font-size: 20px;">聽點音樂，放鬆一下!</div>
+<<<<<<< HEAD
             <div> <audio controls autoplay loop controlsList="nodownload" id="music">
+=======
+            <div> <audio controls loop controlsList="nodownload" id="music">
+>>>>>>> 24ae7efd6dda911cec2792f5441222f7db3b490a
                 <source src="Darktown_Strutters_Ball.mp3" type="audio/mpeg"> 
             </audio></div>
             <div style="padding-top: 50px;">
