@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>巢起巢落</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="material-scrolltop.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+    <script src="jquery-ui.min.js"></script>
+    <!-- style的部分 -->
+    <style>
+        @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        * {
+            font-family: 'Noto Sans TC';
+        }
+
+
+        ::-webkit-scrollbar {
+        /*隱藏滾輪*/
+        display: none;
+        }
+
+        
+        #start{
+            width:230px;height:90px;font-size:40px ;color: burlywood;font-weight: bolder;
+            border-radius: 10px;border-color: rgb(216, 190, 157) ;background-color: cornsilk;
+            position: relative;top:90px;letter-spacing:3px
+        }
+        #intro{
+            text-align: center;
+            height: 1600px;background-color:  #fde6c8;
+        }
+        #introhead{
+            text-align:center;font-size: 90px; color: #e9941d; font-weight: bold;
+            ;position: relative;letter-spacing:10px;top: 10px;
+        }
+        #introimg{
+            max-width: 400px;max-height: 320px;
+        }
+        #question{
+            width:300px;height:70px;font-size:30px ;color: #e9941d;font-weight: bolder;
+            border-radius: 10px;border-color: #e9a13ccc;background-color: cornsilk;
+            position: relative;top: -10px;margin-left: 10px;
+        }
+        #finish{
+            width:300px;height:70px;font-size:30px ;color: #e9941d;font-weight: bolder;
+            border-radius: 10px;border-color: #e9a13ccc ;background-color: cornsilk;
+            position: relative;top: -10px; margin-left: 10px;
+        }
+        #hidden1{
+            position: relative;;
+        }
+        #next{
+            width:180px;height:70px;font-size:30px;color: 	#9F5000;font-weight: bolder;
+            border-radius: 10px;background-color:	#FFC78E;
+            position: relative;top: 80px;margin:0px auto
+        }
+        #nesthead{
+            text-align:center;font-size: 100px; color: #9F5000; font-weight: bold;
+            background-color: cornsilk;position: relative;top: 35px;letter-spacing:30px
+            ;padding-left: 0px;
+        }
+        #sixstart{
+            height: 1800px;
+            background-color: cornsilk
+            ;text-align: center;
+        }
+        
+        #nestfall{
+            height: 2100px;text-align:center;position: relative;
+            background-color: cornsilk
+        }
+        #pdf{
+            width:300px;height:70px;font-size:25px ;color: #FCE9DC;font-weight: bolder;
+            border-radius: 10px;border-color: #FCE9DC ;background-color: #E58C4F;
+            position: relative;top: 30px;float:left;margin-right:100px
+        }
+        #pdf1{
+            width:300px;height:70px;font-size:25px ;color: #FCE9DC;font-weight: bolder;
+            border-radius: 10px;border-color: #FCE9DC ;background-color: #E58C4F;
+            position: relative;top: 30px;float:left;margin-right:100px
+        }
+        #game{
+            width:300px;height:70px;font-size:25px ;color: #FCE9DC;font-weight: bolder;
+            border-radius: 10px;border-color: #FCE9DC ;background-color: #E58C4F;
+            position: relative;top: 30px;float:left
+        }
+        #game2{
+            width:300px;height:70px;font-size:25px ;color: #FCE9DC;font-weight: bolder;
+            border-radius: 10px;border-color: #FCE9DC ;background-color: #E58C4F;
+            position: relative;top: 30px;float:left
+        }
+        #again{
+            width:250px;height:70px;font-size:30px;color: 	#9F5000;font-weight: bolder;
+            border-radius: 10px;background-color:	#FFC78E;
+            position: relative;top: 70px;float:left;margin-right:10px;margin-left: 40px;
+        }
+        #question2{
+            width:300px;height:70px;font-size:30px;color: 	#9F5000;font-weight: bolder;
+            border-radius: 10px;background-color:	#FFC78E;
+            position: relative;top: 70px;float:left
+        }
+        #br{
+            text-align: center;position: relative;top: 80px;width:700px;margin:0px auto;
+
+        }
+        .content{
+            position: relative;top: 115px;
+            text-align: center;
+           ;display: inline-block;margin:0px auto;width: 60%;
+        }
+        .bird{
+            display: inline-block;margin-left: 20px ;margin-top: 10px;
+            width: 300px;height: 300px;background-color: #dab06d;text-align: center;
+        }
+        .content .bird:hover img {
+					-moz-transform: scale(1.085);
+					-webkit-transform: scale(1.085);
+					-ms-transform: scale(1.085);
+					transform: scale(1.085);
+				}
+        .cat{
+            display: inline-block;
+        }
+        .banner{
+            text-align:center;
+            height: 1000px;background-color: rgb(253, 230, 200);
+        }
+        .gname{
+            position: relative;padding-left: 50px;
+        }
+        .button{ text-align: center;position: relative;top: 80px;width:700px;margin:0px auto;
+        }
+        .button2{ text-align: center;position: relative;top: 40px;width:600px;margin:0px auto;
+        }
+        .puzzle{
+            text-align:center;background-color: cornsilk;height: 400px;
+            z-index: 1;
+        }
+        .pd{
+            text-align: center;height: 900px;background-color: cornsilk;
+            z-index: initial;
+        }
+    </style>
+    <!-- script的部分 -->
+    <script src="jQueryRotate.js"></script>
+    <script src="material-scrolltop.js"></script>
+    <script src="jquery.ui.touch-punch.min.js"></script>
+    <script>
+        
+        $(function() {
+            $("#start").click(function(){
+            $("html,body").animate({scrollTop:$("#intro").offset().top}, 900);
+            }); 
+        });
+        
+        $(function() {
+            $("#finish").click(function(){
+            $("html,body").animate({scrollTop:$("#sixstart").offset().top}, 1000);
+            }); 
+        });
+
+        $(function() {
+            $("#next").click(function(){
+            $("html,body").animate({scrollTop:$("#nestfall").offset().top}, 1000);
+            }); 
+        });
+
+        $(function() {
+            $("#again").click(function(){
+            $("html,body").animate({scrollTop:$("#").offset().top}, 1000);
+            }); 
+        });
+
+        $(function() {
+            $("#tolast").click(function(){
+            $("html,body").animate({scrollTop:$("#last").offset().top}, 1000);
+            }); 
+        });
+
+        $(function() {
+        $("#question").click(function(){
+        $("#hidden1").show();
+        });
+         });
+         
+         $(function() {
+        $("#pdf").click(function(){
+        $("#pdfview").show();
+        });
+         });
+        
+         $(function() {
+        $("#question").click(function(){
+        $("#question").hide();
+        });
+         });
+        
+        
+         $(function() {
+        $("#question").click(function(){
+        $("#hidden2").hide();
+        });
+         });
+         
+
+
+    </script>
+</head>
+<body>
+    
+     
+    <div class="banner">
+        <div style="position: relative;top: 50px;"><img src="images/banner.png" width="800"></div>
+        <div ><input type="button" value="START" id="start" ></div>
+        
+        
+    </div>
+    <div id="intro" >
+        <div id="introhead">
+            <div>簡介和前測問卷</div>
+        </div>
+        <div style=" font-size: 25px; font-weight: bold;color: #331e01ee;
+            position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
+            <p><a style="color: #c27005ee;font-size: 26px;">《巢起巢落》</a>是一段圍繞著鳥巢的故事：</p>
+            <p><a style="color: #a76004ee;font-size: 26px;">〈巢起〉</a>－&nbsp;&nbsp;介紹都市及台大校園常見鳥類的鳥巢、牠們使用的材料、築巢選址等；
+                <a style="color: #a76004ee;font-size: 26px;">〈巢落〉</a>－&nbsp;&nbsp;講述當鳥巢築成，
+                鳥寶寶誕生後，可能會遇到的落出巢外的問題，以及身為人類的我們能如何給予協助。</p>
+        </div>
+        <p></p>
+        <div style="font-size: 25px; font-weight: bold;color: #331e01ee;line-height:1.6;
+            position: relative;top: 25px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
+            &nbsp;&nbsp;&nbsp;&nbsp;在進入《巢起巢落》的故事之前，希望能借用您1~2分鐘的時間填寫<a style="color: #a76004ee;font-size: 25px;">前測問卷</a>、
+            以及在展覽結束的最後協助我們填寫<a style="color: #a76004ee;font-size: 25px;">後測問卷</a>，
+            您的答案將會作為我們改善頁面、形式、介紹內容等的重要參考，謝謝&nbsp;!
+        </div>
+        
+        
+        <div >
+        <div id="hidden2" style="text-align: center;">
+            <img src="images/thanks.png" width="500" >
+            <a href="https://reurl.cc/2rgrxv" target="_blank"><input type="button" value="點我填寫前測問卷" id="question" ></a></div>
+        <div id="hidden1" style="display:none;text-align: center;">
+            <img src="images/goodjob.png" width="500">
+            <input type="button" value="我填完了!開始探索!" id="finish" ></div>
+        </div> 
+
+    </div>
+
+    </div>
+    <div id="sixstart">
+        <div id="nesthead">
+            <div>巢起</div>
+        </div>
+        <div style=" font-size: 25px; font-weight: bold;color: #331e01ee;
+        position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
+            <a style="color: #a76004ee;font-size: 35px;">好久</a><a style="color: #a76004ce;font-size: 27px;">不見台大校園了吧？</a>
+            <p></p>
+            <div style="color:#583502ee ;">
+                在奔波繁忙的校園生活中，你可曾見過下面這些鳥類活躍於其中的身影？是否曾經一窺牠們繁衍生息？
+                你可曾感到好奇，這些鳥類會為自己的下一代築出什麼樣的鳥巢呢？而鳥類所選擇的材料是哪些、又是築巢在什麼樣的地方呢？
+                </div>
+                <p></p>
+                <a style="color: #a76004ce;font-size: 27px;">讓我們動手點開下面這六個箱子，一起來探索牠們的鳥巢小知識吧 !</a>
+            
+        </div>
+        <div class="content">
+            <div class="bird">
+                <a href="01.html" target="_blank"><img src="images/01.png" width="280px"  /></a>
+            </div>
+            <div class="bird">
+                <a href="02.html" target="_blank"><img src="images/02.png" width="280px" /></a>
+            </div>
+            <div class="bird">
+                <a href="03.html" target="_blank"><img src="images/03.png" width="280px" /></a>
+            </div>
+            <div class="bird">
+                <a href="04.html" target="_blank"><img src="images/04.png" width="280px" /></a>
+            </div>
+            <div class="bird">
+                <a href="05.html" target="_blank"><img src="images/05.png" width="280px" /></a>
+            </div>
+            <div class="bird">
+                <a href="06.html" target="_blank"><img src="images/06.png" width="280px" /></a>
+            </div>
+        </div>
+                    
+        <div class="button"><input type="button" value="前往巢落" id="next"></div>
+    
+          
+    </div>
+
+    <div id="nestfall">
+        <div id="nesthead">
+            <div>巢落</div>
+        </div>
+        <div style=" font-size: 25px; font-weight: bold;color: #583502ee;
+        position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
+            <a style="color: #a76004ce;font-size: 27px;">嘩！鳥巢終於完成了！巢中的蛋也孵化成鳥寶寶了～</a>
+            <P></P>
+            但是...牠們能順利長大嗎？雖然鳥巢通常築在能躲避天敵的地方，但若鳥寶寶意外摔出來，該怎麼辦？如果看到落出巢外的鳥寶寶，你知道要怎麼幫助牠嗎？
+
+        </div>
+        <div style="position: relative;top: 30px;"><img src="images/cry.png" ></div>
+        <div style="text-align: center;position: relative;top: 70px;display:none ;
+        height: 700px;background-color:cornsilk" id="pdfview">
+            <iframe frameborder="0" scrolling="no"
+            width="1200" height="700"
+             src="https://drive.google.com/file/d/1DKqDfSNCFFmx5if5ov08GpABGYb-1Cwj/preview">
+            </iframe>
+        </div>
+        <div id="br">
+            <input type="button" value="我要直接看解決方法海報" id="pdf" >
+            <a href="https://reurl.cc/bXzz1r" target="_blank"><input type="button" value="我要玩情境遊戲" id="game" ></a>
+            <input type="button" value="前往結尾" style=" width:180px;height:70px;font-size:30px;
+        color: 	#9F5000;font-weight: bolder;border-radius: 10px;background-color:	#FFC78E;
+            position: relative;top: 120px;margin:0px auto" id="tolast"></div>
+        </div>
+        
+        
+    </div>
+    
+    <div id="last" style="height:1000px;background-color:#fde6c8 ;">
+        <div id="introhead">
+            <div>結尾</div>
+        </div>
+        <div style=" text-align:center ;font-size: 25px; font-weight: bold;color:#583502ee;
+            position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
+            非常感謝您參與<a style="color: #a76004ee;">《巢起巢落》</a>的線上展示，另外也請記得點入下方連結、協助我們填寫<a style="color: #a76004ee;">後測問卷</a>；如果有任何建議及提問都可以透過後測問卷最後的欄位與我們聯繫。
+        </div>
+        <div style=" text-align:center ;
+            position: relative;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
+            <a style="font-size: 25px; font-weight: bold;color:#583502ee;">希望不論是鳥巢不同面向的小知識，抑或幼鳥/雛鳥落巢的處理流程介紹，都可以在未來的某一天，為您的生活帶來一點點好的影響～
+            </a>
+            <div style="position: relative;top: 50px;"><img src="images/last.png" width="1000" /></div>
+            <div style="text-align: center;width:600px;margin:0px auto;height: auto;background-color:cornsilk ;position: relative;top: 10px;">
+                <a href="#sixstart"><input type="button" value="從巢起再看一次" id="again"></a>
+                <a href="https://reurl.cc/4amakK" target="_blank"><input type="button" value="直接填寫後測問卷" id="question2" ></a>   
+            </div>
+            
+        </div>
+         
+    </div>
+        <div style="position: relative;height: 100px;text-align: center;;background-color:#fde6c8 ;"> 
+            <a style="text-align: center;position: relative;top: 50px">Ting Wei Xu © 2021 </a></div> 
+
+    
+      
+      
+        
+        
+        
+</body>
+</html>
