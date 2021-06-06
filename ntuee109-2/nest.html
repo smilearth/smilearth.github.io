@@ -205,8 +205,14 @@
         $("#hidden2").hide();
         });
          });
-         
+        
+        var ebtplay = document.querySelector("#play");
+        var emymp3 = document.querySelector("#music1"); 
+        ebtplay.onclick = function () { emymp3.play(); }; 
+        
 
+
+       
 
     </script>
 </head>
@@ -215,11 +221,14 @@
      
     <div class="banner">
         <div style="position: relative;top: 50px;"><img src="images/banner.png" width="800"></div>
-        <div ><input type="button" value="START" id="start" ></div>
+        <div id="play" ><input type="button" value="START" id="start" ></div>
         
         
     </div>
     <div id="intro" >
+        <div> <audio controls autoplay loop  id="music1">
+            <source src="01.mp3" type="audio/mpeg"> 
+        </audio></div>
         <div id="introhead">
             <div>簡介和前測問卷</div>
         </div>
@@ -252,6 +261,7 @@
 
     </div>
     <div id="sixstart">
+        
         <div id="nesthead">
             <div>巢起</div>
         </div>
@@ -335,11 +345,12 @@
             position: relative;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
             <a style="font-size: 25px; font-weight: bold;color:#583502ee;">希望不論是鳥巢不同面向的小知識，抑或幼鳥/雛鳥落巢的處理流程介紹，都可以在未來的某一天，為您的生活帶來一點點好的影響～
             </a>
-            <div style="position: relative;top: 50px;"><img src="images/last.png" width="1000" /></div>
-            <div style="text-align: center;width:600px;margin:0px auto;height: auto;background-color:cornsilk ;position: relative;top: 10px;">
+            <div style="text-align: center;width:600px;margin:0px auto;height: auto;background-color:cornsilk ;position: relative;top: 0px;">
                 <a href="#sixstart"><input type="button" value="從巢起再看一次" id="again"></a>
                 <a href="https://reurl.cc/4amakK" target="_blank"><input type="button" value="直接填寫後測問卷" id="question2" ></a>   
             </div>
+            <div style="position: relative;top: 100px;"><img src="images/last.png" width="1000" /></div>
+            
             
         </div>
          
