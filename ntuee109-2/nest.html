@@ -107,6 +107,16 @@
             text-align: center;position: relative;top: 80px;width:700px;margin:0px auto;
 
         }
+        .stop{
+            width:100px;height:40px;color:#fde6c8;font-weight: bolder;
+           ;background-color:	#fde6c8;border-color: #fde6c8;border: 1px solid #fde6c8
+            
+        }
+        .stop2{
+            width:50px;height:50px;color:#fff8dc;font-weight: bolder;
+           ;background-color:	#fff8dc;border-color: #fff8dc;border: 1px solid #fff8dc
+            
+        }
         .content{
             position: relative;top: 115px;
             text-align: center;
@@ -137,7 +147,7 @@
         .button2{ text-align: center;position: relative;top: 40px;width:600px;margin:0px auto;
         }
         .puzzle{
-            text-align:center;background-color: cornsilk;height: 400px;
+            text-align:center;background-color: #fff8dc;height: 400px;
             z-index: 1;
         }
         .pd{
@@ -206,14 +216,6 @@
         });
          });
         
-        var ebtplay = document.querySelector("#play");
-        var emymp3 = document.querySelector("#music1"); 
-        ebtplay.onclick = function () { emymp3.play(); }; 
-        
-
-
-       
-
     </script>
 </head>
 <body>
@@ -221,16 +223,22 @@
      
     <div class="banner">
         <div style="position: relative;top: 50px;"><img src="images/banner.png" width="800"></div>
-        <div id="play" ><input type="button" value="START" id="start" ></div>
+        <div ><input type="button" value="START" id="start" onclick="document.getElementById('music1').play();" ></div>
         
         
     </div>
     <div id="intro" >
-        <div> <audio controls autoplay loop  id="music1">
+        <div style="text-align: right;position: relative;right: 30px;"> 
+            <audio  autoplay loop  id="music1">
             <source src="01.mp3" type="audio/mpeg"> 
         </audio></div>
+        
         <div id="introhead">
             <div>簡介和前測問卷</div>
+            <div style="position: relative;text-align: right;padding-right: 450px;top:-147px ;height: 0px;">
+                <button type="button" class="stop"><img src="images/soundoff.png" width="90" onclick="document.getElementById('music1').pause()"></button>
+                <!-- <img src="images/soundoff.png" width="90" onclick="document.getElementById('music1').pause()">-->
+            </div>
         </div>
         <div style=" font-size: 25px; font-weight: bold;color: #331e01ee;
             position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
@@ -254,16 +262,25 @@
             <a href="https://reurl.cc/2rgrxv" target="_blank"><input type="button" value="點我填寫前測問卷" id="question" ></a></div>
         <div id="hidden1" style="display:none;text-align: center;">
             <img src="images/goodjob.png" width="500">
-            <input type="button" value="我填完了!開始探索!" id="finish" ></div>
+            <input type="button" value="我填完了!開始探索!" id="finish" 
+            onclick="document.getElementById('music2').play();document.getElementById('music1').pause();" ></div>
         </div> 
 
     </div>
 
     </div>
     <div id="sixstart">
+        <div style="text-align: right;position: relative;right: 30px;"> 
+            <audio  autoplay loop  id="music2">
+            <source src="02.mp3" type="audio/mpeg"> 
+        </audio></div>
         
         <div id="nesthead">
             <div>巢起</div>
+            <div style="position: relative;text-align: center;padding-left: 850px;top:-158px ;height: 0px;">
+                <button type="button" class="stop2"><img src="images/soundoff.png" width="90" onclick="document.getElementById('music2').pause()"></button>
+                <!-- <img src="images/soundoff.png" width="90" onclick="document.getElementById('music1').pause()">-->
+            </div>
         </div>
         <div style=" font-size: 25px; font-weight: bold;color: #331e01ee;
         position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
@@ -298,14 +315,24 @@
             </div>
         </div>
                     
-        <div class="button"><input type="button" value="前往巢落" id="next"></div>
+        <div class="button"><input type="button" value="前往巢落" id="next"  
+            onclick="document.getElementById('music3').play();document.getElementById('music2').pause();"></div>
     
           
     </div>
 
     <div id="nestfall">
+        <div style="text-align: right;position: relative;right: 30px;"> 
+            <audio  autoplay loop  id="music3">
+            <source src="03.mp3" type="audio/mpeg"> 
+        </audio></div>
+        
         <div id="nesthead">
             <div>巢落</div>
+            <div style="position: relative;text-align: center;padding-left: 850px;top:-158px ;height: 0px;">
+                <button type="button" class="stop2"><img src="images/soundoff.png" width="90" onclick="document.getElementById('music3').pause()"></button>
+                <!-- <img src="images/soundoff.png" width="90" onclick="document.getElementById('music1').pause()">-->
+            </div>
         </div>
         <div style=" font-size: 25px; font-weight: bold;color: #583502ee;
         position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
@@ -327,15 +354,24 @@
             <a href="https://reurl.cc/bXzz1r" target="_blank"><input type="button" value="我要玩情境遊戲" id="game" ></a>
             <input type="button" value="前往結尾" style=" width:180px;height:70px;font-size:30px;
         color: 	#9F5000;font-weight: bolder;border-radius: 10px;background-color:	#FFC78E;
-            position: relative;top: 120px;margin:0px auto" id="tolast"></div>
+            position: relative;top: 120px;margin:0px auto" id="tolast"
+            onclick="document.getElementById('music4').play();document.getElementById('music3').pause();"></div>
         </div>
         
         
     </div>
     
     <div id="last" style="height:1000px;background-color:#fde6c8 ;">
+        <div style="text-align: right;position: relative;right: 30px;"> 
+            <audio  autoplay loop  id="music4">
+            <source src="04.mp3" type="audio/mpeg"> 
+        </audio></div>
         <div id="introhead">
             <div>結尾</div>
+            <div style="position: relative;text-align: center;padding-left: 900px;top:-145px ;height: 0px;">
+                <button type="button" class="stop"><img src="images/soundoff.png" width="90" onclick="document.getElementById('music4').pause()"></button>
+                <!-- <img src="images/soundoff.png" width="90" onclick="document.getElementById('music1').pause()">-->
+            </div>
         </div>
         <div style=" text-align:center ;font-size: 25px; font-weight: bold;color:#583502ee;
             position: relative;top: 50px;letter-spacing:3px;height: 200px;max-width: 1000px;margin:0px auto">
@@ -346,7 +382,8 @@
             <a style="font-size: 25px; font-weight: bold;color:#583502ee;">希望不論是鳥巢不同面向的小知識，抑或幼鳥/雛鳥落巢的處理流程介紹，都可以在未來的某一天，為您的生活帶來一點點好的影響～
             </a>
             <div style="text-align: center;width:600px;margin:0px auto;height: auto;background-color:cornsilk ;position: relative;top: 0px;">
-                <a href="#sixstart"><input type="button" value="從巢起再看一次" id="again"></a>
+                <a href="#sixstart"><input type="button" value="從巢起再看一次" id="again"
+                    onclick="document.getElementById('music2').play();document.getElementById('music4').pause();"></a>
                 <a href="https://reurl.cc/4amakK" target="_blank"><input type="button" value="直接填寫後測問卷" id="question2" ></a>   
             </div>
             <div style="position: relative;top: 100px;"><img src="images/last.png" width="1000" /></div>
