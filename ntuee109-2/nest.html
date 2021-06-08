@@ -25,13 +25,13 @@
 
         
         #start{
-            width:230px;height:90px;font-size:40px ;color: burlywood;font-weight: bolder;
+            width:230px;height:90px;font-size:40px ;color: rgb(209, 152, 78);font-weight: bolder;
             border-radius: 10px;border-color: rgb(216, 190, 157) ;background-color: cornsilk;
             position: relative;top:90px;letter-spacing:3px
         }
         #intro{
             text-align: center;
-            height: 1600px;background-color:  #fde6c8;
+            height: 3000px;background-color:  #fde6c8;
         }
         #introhead{
             text-align:center;font-size: 90px; color: #e9941d; font-weight: bold;
@@ -64,13 +64,13 @@
             ;padding-left: 0px;
         }
         #sixstart{
-            height: 1800px;
+            height: 3600px;
             background-color: cornsilk
             ;text-align: center;
         }
         
         #nestfall{
-            height: 2100px;text-align:center;position: relative;
+            height: 3800px;text-align:center;position: relative;
             background-color: cornsilk
         }
         #pdf{
@@ -137,7 +137,7 @@
         }
         .banner{
             text-align:center;
-            height: 1000px;background-color: rgb(253, 230, 200);
+            height: 2000px;background-color: rgb(253, 230, 200);
         }
         .gname{
             position: relative;padding-left: 50px;
@@ -163,7 +163,7 @@
         
         $(function() {
             $("#start").click(function(){
-            $("html,body").animate({scrollTop:$("#intro").offset().top}, 900);
+            $("html,body").animate({scrollTop:$("#intro").offset().top}, 1100);
             }); 
         });
         
@@ -187,7 +187,7 @@
 
         $(function() {
             $("#tolast").click(function(){
-            $("html,body").animate({scrollTop:$("#last").offset().top}, 1000);
+            $("html,body").animate({scrollTop:$("#last").offset().top}, 900);
             }); 
         });
 
@@ -223,7 +223,7 @@
      
     <div class="banner">
         <div style="position: relative;top: 50px;"><img src="images/banner.png" width="800"></div>
-        <div ><input type="button" value="START" id="start" onclick="document.getElementById('music1').play();" ></div>
+        <div ><input type="button" value="點我開始" id="start" onclick="document.getElementById('music1').play();" ></div>
         
         
     </div>
